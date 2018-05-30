@@ -1,6 +1,6 @@
 {
   "name": "vue-pesdk-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "PhotoEditorSDK wrapper for Vue.js",
   "author": "Jakub Juszczak <jakub@posteo.de>",
   "private": true,
