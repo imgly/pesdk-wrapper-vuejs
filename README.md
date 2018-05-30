@@ -39,7 +39,7 @@ Import the PhotoEditorSDK css styles and the vue-sdk component.
 ## 📒 Props
 
 | prop | default | type | required | description
-|---|---|---|---|
+|---|---|---|---|---|
 | ui | 'react' | String | no | Select if you want to use the DesktopUi or ReactUi. Supported values are `react` and `desktop`.
 | license | '' | String | **yes** | Your PhotoEditorSdk license
 | imagePath | '' | String | **yes** | Path to the image that will be rendered initially
