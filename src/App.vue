@@ -27,7 +27,6 @@ export default {
     ui: 'desktop'
   }),
   mounted () {
-    console.log('📷', this.$pesdk)
     this.$pesdk.on('export', (result) => {
       console.log(result)
     })

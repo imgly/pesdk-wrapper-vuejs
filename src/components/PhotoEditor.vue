@@ -10,8 +10,8 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import Vue from 'vue'
 import PhotoEditorSDK from 'photoeditorsdk'
-import 'photoeditorsdk/desktop-ui' // eslint-disable-line no-unused-vars
-import 'photoeditorsdk/react-ui' // eslint-disable-line no-unused-vars
+import PhotoEditorDesktopUI from 'photoeditorsdk/desktop-ui' // eslint-disable-line no-unused-vars
+import PhotoEditorReactUI from 'photoeditorsdk/react-ui' // eslint-disable-line no-unused-vars
 
 window.React = window.React || React
 window.ReactDom = window.ReactDom || ReactDom
@@ -19,6 +19,7 @@ window.ReactDom = window.ReactDom || ReactDom
 const supportedUis = ['react', 'desktop']
 
 export default {
+  name: 'PhotoEditor',
   props: {
     ui: {
       type: String,
@@ -65,6 +66,7 @@ export default {
     }
   },
   mounted () {
+    console.log('UI', PhotoEditorSDK.UI)
     this.renderUi()
   },
   methods: {

@@ -12,22 +12,46 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
-    'vue-pesdk': './src/index.js'
+    'vue-pesdk': './src/components/PhotoEditor.vue'
   },
   devtool: 'source-map',
   output: {
     filename: './dist/[name].js',
-    library: 'VuePsdk',
+    library: 'PhotoEditor',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
   externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
     'photoeditorsdk': 'PhotoEditorSDK',
-    'photoeditorsdk/desktop-ui': 'photoeditorsdk/desktop-ui',
-    'photoeditorsdk/react-ui': 'photoeditorsdk/react-ui',
-    'vue': 'Vue'
+    'vue': 'Vue',
+    'photoeditorsdk/desktop-ui': {
+      root: 'PhotoEditorDesktopUI',
+      commonjs2: 'photoeditorsdk/desktop-ui',
+      commonjs: 'photoeditorsdk/desktop-ui',
+      amd: 'photoeditorsdk/desktop-ui',
+      umd: 'photoeditorsdk/desktop-ui',
+    },
+    'photoeditorsdk/react-ui': {
+      root: 'PhotoEditorDesktopUI',
+      commonjs2: 'photoeditorsdk/react-ui',
+      commonjs: 'photoeditorsdk/react-ui',
+      amd: 'photoeditorsdk/react-ui',
+      umd: 'photoeditorsdk/react-ui',
+    },
+    react: {
+      root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react',
+      umd: 'react',
+    },
+    'react-dom': {
+      root: 'ReactDOM',
+      commonjs2: 'react-dom',
+      commonjs: 'react-dom',
+      amd: 'react-dom',
+      umd: 'react-dom',
+    },
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
