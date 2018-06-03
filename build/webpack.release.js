@@ -22,7 +22,13 @@ module.exports = {
     umdNamedDefine: true
   },
   externals: {
-    'photoeditorsdk': 'PhotoEditorSDK',
+    photoeditorsdk: {
+      root: 'PhotoEditorSDK',
+      commonjs2: 'photoeditorsdk',
+      commonjs: 'photoeditorsdk',
+      amd: 'photoeditorsdk',
+      umd: 'photoeditorsdk',
+    },
     'vue': 'Vue',
     'photoeditorsdk/desktop-ui': {
       root: 'PhotoEditorDesktopUI',
