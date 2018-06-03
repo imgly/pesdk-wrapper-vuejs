@@ -794,6 +794,12 @@
     source-map "^0.5.6"
     vue-template-es2015-compiler "^1.6.0"
 
+"@vue/test-utils@^1.0.0-beta.16":
+  version "1.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-1.0.0-beta.16.tgz#dcf7a30304391422e382b5f97db6eb9508112906"
+  dependencies:
+    lodash "^4.17.4"
+
 "@webassemblyjs/ast@1.5.8":
   version "1.5.8"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.5.8.tgz#f75ac7e7602b7833abd5d53951baae8a07ebb5df"
@@ -9599,7 +9605,7 @@ vue-style-loader@^4.1.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-template-compiler@^2.5.16, vue-template-compiler@^2.5.2:
+vue-template-compiler@^2.5.16:
   version "2.5.16"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.5.16.tgz#93b48570e56c720cdf3f051cc15287c26fbd04cb"
   dependencies:

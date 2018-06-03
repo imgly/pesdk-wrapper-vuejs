@@ -147,7 +147,7 @@ Like mentioned earlier you can pass in all configuration options like here: http
 
 ## 📜 Changelog
 
-Details changes for each release are documented in the CHANGELOG.md.
+Details changes for each release are documented in the [CHANGELOG.md](./CHANGELOG.md).
 
 ## Development
 

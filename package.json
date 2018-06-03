@@ -1,5 +1,5 @@
 {
-  "name": "vue-pesdk-plugin",
+  "name": "vue-pesdk",
   "version": "0.1.1",
   "description": "PhotoEditorSDK wrapper for Vue.js",
   "author": "Jakub Juszczak <jakub@posteo.de>",
@@ -26,6 +26,7 @@
     "vue": "^2.5.2"
   },
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.16",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",
@@ -81,7 +82,7 @@
     "vue-jest": "^1.0.2",
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
-    "vue-template-compiler": "^2.5.2",
+    "vue-template-compiler": "^2.5.16",
     "vuepress": "^0.10.0",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
