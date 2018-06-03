@@ -11,6 +11,11 @@ yarn add vue-pesdk photoeditorsdk react react-dom
 `photoeditorsdk`, `react` and `react-dom` are peerDependencies and are needed to render the PhotoEditorSdk Ui.
 In addition you need the PhotoEditorSDK assets. You can either get them [here](https://github.com/imgly/pesdk-html5-build/tree/master/assets) or copy it from your `node_modules` into your public asset folder. And set the `assetPath` prop to this folder.
 
+If you scaffold your project with Vue CLI you can just cp the asset folder from `node_modules`.
+```bash
+cp -r node_modules/photoeditorsdk/assets/ ~/projects/your-project/static/
+```
+
 ## 👈 Usage
 
 Import the PhotoEditorSDK css styles and the vue-sdk component.
