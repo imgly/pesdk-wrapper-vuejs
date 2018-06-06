@@ -1,6 +1,10 @@
-# vue-pesdk-plugin
+<div align="center">
+  <img width="484" heigth="169" src="/logo.png" alt="vue-pesdk">
+</div>
 
-> PhotoEditor SDK binding for Vue.js
+# vue-pesdk
+
+> PhotoEditor SDK Vue.js wrapper
 
 ## 🔧 Installation
 
