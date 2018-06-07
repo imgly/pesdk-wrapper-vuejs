@@ -6,7 +6,6 @@
   "private": true,
   "main": "dist/vue-pesdk.js",
   "unpkg": "dist/vue-pesdk.min.js",
-  "browser": "dist/vue-pesdk.min.js",
   "files": [
     "dist"
   ],
