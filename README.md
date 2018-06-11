@@ -38,7 +38,7 @@ Import the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projec
 ```html
 <template>
   <PhotoEditor
-    asset-path="trace"
+    asset-path="/static"
     license='{"owner": ...}'
     image-path='/static/example.jpg'
   />
