@@ -68,7 +68,7 @@ Import the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projec
 | editorOptions |  | Object | no | Extended configuration options for the editor object https://docs.photoeditorsdk.com/guides/html5/v4/introduction/configuration
 | options |  | Object | no | Extended configuration options https://docs.photoeditorsdk.com/guides/html5/v4/introduction/configuration
 
-## Getting Started
+## 🛫 Getting Started
 
 The idea behind this wrapper is to simplify the usage of the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin) inside Vue. We try to minimize the configuration and maximize the possibilities.
 Because of that you have only 3 important and required props, `license`, `imagePath` and `assetPath` to get the editor running.
@@ -170,7 +170,7 @@ Like mentioned earlier you can pass in all configuration options like [here](htt
 
 Details changes for each release are documented in the [CHANGELOG.md](CHANGELOG.md).
 
-## Development
+## 👨‍💻 Development
 
 ``` bash
 # install dependencies
@@ -198,15 +198,14 @@ npm test
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 
-## License
+## 📜 License
 
 Please see [LICENSE](LICENSE.md) for licensing details.
 
-## Authors and Contributors
+## 👥 Authors and Contributors
 
 Please see [CONTRIBUTORS](CONTRIBUTORS.md) for licensing details.
 
-## Support or Contact
+## 💬 Support or Contact
 
 For support requests, please use our [Support Desk](https://support.photoeditorsdk.com).
-
