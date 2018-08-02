@@ -66,7 +66,6 @@ export default {
     }
   },
   mounted () {
-    console.log('UI', PhotoEditorSDK.UI)
     this.renderUi()
   },
   methods: {
