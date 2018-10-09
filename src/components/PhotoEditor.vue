@@ -9,7 +9,7 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 import Vue from 'vue'
-import PhotoEditorSDK from 'photoeditorsdk'
+import PhotoEditorSDK from 'photoeditorsdk' // eslint-disable-line no-unused-vars
 import PhotoEditorDesktopUI from 'photoeditorsdk/desktop-ui' // eslint-disable-line no-unused-vars
 import PhotoEditorReactUI from 'photoeditorsdk/react-ui' // eslint-disable-line no-unused-vars
 
@@ -66,7 +66,6 @@ export default {
     }
   },
   mounted () {
-    console.log('UI', PhotoEditorSDK.UI)
     this.renderUi()
   },
   methods: {
@@ -79,7 +78,7 @@ export default {
       this.saveEditor()
     },
     renderDesktopUi () {
-      this.editor = new PhotoEditorSDK.UI.DesktopUI({
+      this.editor = new PhotoEditorDesktopUI({
         ...this.options,
         container: this.$refs.container,
         license: this.license,
@@ -94,7 +93,7 @@ export default {
       })
     },
     renderReactUi () {
-      this.editor = new PhotoEditorSDK.UI.ReactUI({
+      this.editor = new PhotoEditorReactUI({
         ...this.options,
         container: this.$refs.container,
         license: this.license,
