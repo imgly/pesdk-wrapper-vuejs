@@ -13,7 +13,8 @@
 import PhotoEditor from './components/PhotoEditor'
 import 'photoeditorsdk/css/PhotoEditorSDK.UI.DesktopUI.min.css'
 import 'photoeditorsdk/css/PhotoEditorSDK.UI.ReactUI.min.css'
-import * as myLicense from './components/license.json'
+
+const myLicense = null // replace this with the content of your license file
 
 export default {
   name: 'App',
@@ -22,7 +23,7 @@ export default {
   },
   data: () => ({
     path: '/static/example.jpg',
-    license: JSON.stringify(myLicense),
+    license: myLicense,
     editorInstance: null,
     ui: 'desktop'
   }),

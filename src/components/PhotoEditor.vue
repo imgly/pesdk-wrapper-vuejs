@@ -44,7 +44,7 @@ export default {
     },
     assetPath: {
       type: String,
-      default: 'static'
+      default: 'static/photoeditorsdk'
     },
     assetResolver: {
       type: Function

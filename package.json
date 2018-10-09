@@ -1,6 +1,6 @@
 {
   "name": "vue-pesdk",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "PhotoEditorSDK wrapper for Vue.js",
   "author": "Team PhotoEditorSDK <contact@photoeditorsdk.com>",
   "private": false,
@@ -21,16 +21,16 @@
     "docs:build": "vuepress build docs"
   },
   "peerDependencies": {
-    "vue": "^2.5.2",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
+    "vue": "^2.5.17",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "photoeditorsdk": "^4.6.0"
   },
   "devDependencies": {
     "vue": "^2.5.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "photoeditorsdk": "^4.6.0",
+    "photoeditorsdk": "^4.12.2",
     "@vue/test-utils": "^1.0.0-beta.16",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
