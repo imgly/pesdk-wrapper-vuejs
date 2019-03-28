@@ -9,7 +9,7 @@
 ## 🏷 Note
 
 [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin)
-is a product of 9elements GmbH. In order to use [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin) inside one of your products, you will need a valid
+is a product of img.ly GmbH. In order to use [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin) inside one of your products, you will need a valid
 [a license](https://www.photoeditorsdk.com/pricing#contact/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin).
 
 ## 🔧 Installation
