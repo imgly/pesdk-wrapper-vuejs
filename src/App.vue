@@ -11,10 +11,11 @@
 
 <script>
 import PhotoEditor from './components/PhotoEditor'
+import PhotoEditorUI from 'photoeditorsdk/desktop-ui'
 import 'photoeditorsdk/css/PhotoEditorSDK.UI.DesktopUI.min.css'
 import 'photoeditorsdk/css/PhotoEditorSDK.UI.ReactUI.min.css'
 
-const myLicense = null // replace this with the content of your license file
+const myLicense = '' // replace this with the content of your license file
 
 export default {
   name: 'App',
@@ -30,6 +31,11 @@ export default {
   mounted () {
     this.$pesdk.on('export', (result) => {
       console.log(result)
+    })
+    this.$pesdk.on(PhotoEditorUI.Events.EDITOR_READY, () => {
+      // You can also access the editor and call functions on it
+      // directly if you need to.
+      this.$pesdk.getEditor()
     })
   },
   methods: {

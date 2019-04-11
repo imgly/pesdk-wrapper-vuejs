@@ -73,7 +73,7 @@ Import the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projec
 The idea behind this wrapper is to simplify the usage of the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin) inside Vue. We try to minimize the configuration and maximize the possibilities.
 Because of that you have only 3 important and required props, `license`, `imagePath` and `assetPath` to get the editor running.
 
-You have however to either download or copy the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin) assets to your public asset folder. You can either get them [here](https://github.com/imgly/pesdk-html5-build/tree/master/assets) or copy it from your `node_modules`.
+However, you have to either download or copy the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin) assets to your public asset folder. You can either get them [here](https://github.com/imgly/pesdk-html5-build/tree/master/assets) or copy them from your `node_modules`.
 
 If you need more configuration possibilities, you can pass all the mentioned [options](https://docs.photoeditorsdk.com/guides/html5/v4/introduction/configuration) to the `editorOptions` or `options` prop.
 
