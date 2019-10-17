@@ -1,6 +1,6 @@
 {
   "name": "vue-pesdk",
-  "version": "4.21.2",
+  "version": "4.21.4",
   "description": "PhotoEditorSDK wrapper for Vue.js",
   "author": "Team PhotoEditorSDK <contact@photoeditorsdk.com>",
   "private": false,
@@ -24,7 +24,7 @@
     "vue": "^2.5.17",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "photoeditorsdk": "^4.21.2"
+    "photoeditorsdk": "^4.21.4"
   },
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.16",
