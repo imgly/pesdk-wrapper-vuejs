@@ -1,21 +1,14 @@
 <template>
   <div id="app">
-    <button @click="react()">React UI</button>
-    <button @click="desktop()">Desktop UI</button>
-    <PhotoEditor
-      :ui="ui"
-      :image-path="path"
-      :license="license"/>
+    <PhotoEditor :layout="layout" :image-path="path" :license="license" />
   </div>
 </template>
 
 <script>
-import PhotoEditor from './components/PhotoEditor'
-import PhotoEditorUI from 'photoeditorsdk/desktop-ui'
-import 'photoeditorsdk/css/PhotoEditorSDK.UI.DesktopUI.min.css'
-import 'photoeditorsdk/css/PhotoEditorSDK.UI.ReactUI.min.css'
+import PhotoEditor from './components/PhotoEditor.vue';
+import { UIEvent } from 'photoeditorsdk';
 
-const myLicense = '' // replace this with the content of your license file
+const myLicense = ''; // replace this with the content of your license file
 
 export default {
   name: 'App',
@@ -23,30 +16,22 @@ export default {
     PhotoEditor
   },
   data: () => ({
-    path: '/static/example.jpg',
+    path: require('./static/example.jpg'),
     license: myLicense,
-    editorInstance: null,
-    ui: 'desktop'
+    layout: 'advanced'
   }),
-  mounted () {
-    this.$pesdk.on('export', (result) => {
-      console.log(result)
-    })
-    this.$pesdk.on(PhotoEditorUI.Events.EDITOR_READY, () => {
+  mounted() {
+    this.$pesdk.on(UIEvent.EXPORT, result => {
+      // eslint-disable-next-line
+      console.log(result);
+    });
+    this.$pesdk.on(UIEvent.EDITOR_READY, () => {
       // You can also access the editor and call functions on it
       // directly if you need to.
-      this.$pesdk.getEditor()
-    })
-  },
-  methods: {
-    react () {
-      this.ui = 'react'
-    },
-    desktop () {
-      this.ui = 'desktop'
-    }
+      this.$pesdk.getEditor();
+    });
   }
-}
+};
 </script>
 
 <style>

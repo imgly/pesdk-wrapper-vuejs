@@ -1,30 +1,25 @@
 <template>
-  <div
-    ref="container"
-    style="width: 100vw; height: 100vh;"
-  />
+  <div ref="container" style="width: 100vw; height: 100vh;" />
 </template>
 
 <script>
-import React from 'react'
-import ReactDom from 'react-dom'
-import Vue from 'vue'
-import PhotoEditorSDK from 'photoeditorsdk' // eslint-disable-line no-unused-vars
-import PhotoEditorDesktopUI from 'photoeditorsdk/desktop-ui' // eslint-disable-line no-unused-vars
-import PhotoEditorReactUI from 'photoeditorsdk/react-ui' // eslint-disable-line no-unused-vars
+import React from 'react';
+import ReactDom from 'react-dom';
+import Vue from 'vue';
+import { PhotoEditorSDKUI } from 'photoeditorsdk';
 
-window.React = window.React || React
-window.ReactDom = window.ReactDom || ReactDom
+window.React = window.React || React;
+window.ReactDom = window.ReactDom || ReactDom;
 
-const supportedUis = ['react', 'desktop']
+const supportedUis = ['advanced', 'basic'];
 
 export default {
   name: 'PhotoEditor',
   props: {
-    ui: {
+    layout: {
       type: String,
-      default: 'react',
-      validator: (value) => supportedUis.some((type) => type === value)
+      default: 'advanced',
+      validator: value => supportedUis.some(type => type === value)
     },
     license: {
       type: String,
@@ -36,15 +31,18 @@ export default {
       required: true,
       default: ''
     },
-    options: {
+    library: {
       type: Object
     },
-    editorOptions: {
+    custom: {
+      type: Object
+    },
+    tools: {
       type: Object
     },
     assetPath: {
       type: String,
-      default: 'static/photoeditorsdk'
+      default: '/static/assets'
     },
     assetResolver: {
       type: Function
@@ -55,57 +53,35 @@ export default {
     image: null
   }),
   watch: {
-    ui () {
-      this.renderUi()
+    layout() {
+      this.renderUi();
     }
   },
-  created () {
-    this.image = new Image()
+  mounted() {
+    this.image = new Image();
+    this.image.onload = () => {
+      this.renderUi();
+    };
     if (this.imagePath) {
-      this.image.src = this.imagePath
+      this.image.src = this.imagePath;
     }
-  },
-  mounted () {
-    this.renderUi()
   },
   methods: {
-    renderUi () {
-      if (this.ui === 'desktop') {
-        this.renderDesktopUi()
-      } else {
-        this.renderReactUi()
-      }
-      this.saveEditor()
-    },
-    renderDesktopUi () {
-      this.editor = new PhotoEditorDesktopUI({
+    renderUi() {
+      this.editor = new PhotoEditorSDKUI({
         ...this.options,
+        image: this.image,
+        layout: this.layout,
         container: this.$refs.container,
-        license: this.license,
+        engine: {
+          license: this.license
+        },
         assets: {
           baseUrl: this.assetPath,
           resolver: this.assetResolver
-        },
-        editor: {
-          image: this.image,
-          ...this.editorOptions
         }
-      })
-    },
-    renderReactUi () {
-      this.editor = new PhotoEditorReactUI({
-        ...this.options,
-        container: this.$refs.container,
-        license: this.license,
-        assets: {
-          baseUrl: this.assetPath,
-          resolver: this.assetResolver
-        },
-        editor: {
-          image: this.image,
-          ...this.editorOptions
-        }
-      })
+      });
+      this.saveEditor();
     },
 
     /**
@@ -113,9 +89,9 @@ export default {
      * so you are able to access it from anywhere with
      * `this.$pesdk` and listen on events.
      */
-    saveEditor () {
-      Vue.prototype.$pesdk = this.editor
+    saveEditor() {
+      Vue.prototype.$pesdk = this.editor;
     }
   }
-}
+};
 </script>
