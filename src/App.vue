@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <PhotoEditor :layout="layout" :image-path="path" :license="license" />
+    <PhotoEditor
+      :layout="layout"
+      :license="license"
+      :image-path="path"
+    />
   </div>
 </template>
 
@@ -16,9 +20,9 @@ export default {
     PhotoEditor
   },
   data: () => ({
-    path: require('./static/example.jpg'),
+    layout: 'advanced',
     license: myLicense,
-    layout: 'advanced'
+    path: 'example.jpg'
   }),
   mounted() {
     this.$pesdk.on(UIEvent.EXPORT, result => {

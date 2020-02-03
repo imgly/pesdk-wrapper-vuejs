@@ -12,6 +12,7 @@ window.React = window.React || React;
 window.ReactDom = window.ReactDom || ReactDom;
 
 const supportedUis = ['advanced', 'basic'];
+const supportedThemes = ['dark', 'light'];
 
 export default {
   name: 'PhotoEditor',
@@ -20,6 +21,11 @@ export default {
       type: String,
       default: 'advanced',
       validator: value => supportedUis.some(type => type === value)
+    },
+    theme: {
+      type: String,
+      default: 'dark',
+      validator: value => supportedThemes.some(type => type === value)
     },
     license: {
       type: String,
@@ -31,21 +37,13 @@ export default {
       required: true,
       default: ''
     },
-    library: {
-      type: Object
-    },
-    custom: {
-      type: Object
-    },
-    tools: {
-      type: Object
-    },
     assetPath: {
       type: String,
-      default: '/static/assets'
+      default: 'assets',
+      required: true
     },
-    assetResolver: {
-      type: Function
+    options: {
+      type: Object
     }
   },
   data: () => ({
@@ -57,14 +55,14 @@ export default {
       this.renderUi();
     }
   },
-  mounted() {
+  created() {
     this.image = new Image();
-    this.image.onload = () => {
-      this.renderUi();
-    };
     if (this.imagePath) {
       this.image.src = this.imagePath;
     }
+  },
+  mounted() {
+    this.renderUi();
   },
   methods: {
     renderUi() {
@@ -72,24 +70,18 @@ export default {
         ...this.options,
         image: this.image,
         layout: this.layout,
+        theme: this.theme,
         container: this.$refs.container,
         engine: {
           license: this.license
         },
-        assets: {
-          baseUrl: this.assetPath,
-          resolver: this.assetResolver
-        }
+        assetBaseUrl: this.assetPath
       });
-      this.saveEditor();
-    },
-
-    /**
-     * Save the editor instance as a vue instance property
-     * so you are able to access it from anywhere with
-     * `this.$pesdk` and listen on events.
-     */
-    saveEditor() {
+      /**
+       * Save the editor instance as a vue instance property
+       * so you are able to access it from anywhere with
+       * `this.$pesdk` and listen on events.
+       */
       Vue.prototype.$pesdk = this.editor;
     }
   }
