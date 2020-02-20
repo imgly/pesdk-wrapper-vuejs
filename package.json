@@ -1,6 +1,6 @@
 {
   "name": "vue-pesdk",
-  "version": "4.22.2",
+  "version": "4.22.3",
   "description": "PhotoEditorSDK wrapper for Vue.js",
   "author": "Team PhotoEditorSDK <contact@photoeditorsdk.com>",
   "private": false,
@@ -67,7 +67,7 @@
     "node-notifier": "^5.1.2",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^1.2.0",
-    "photoeditorsdk": "^4.22.2",
+    "photoeditorsdk": "^4.22.3",
     "portfinder": "^1.0.13",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
