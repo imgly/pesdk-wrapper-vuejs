@@ -15,13 +15,13 @@ is a product of img.ly GmbH. In order to use [PhotoEditor SDK](https://www.photo
 ## 🔧 Installation
 
 ```bash
-yarn add vue-pesdk photoeditorsdk react react-dom
+yarn add vue-pesdk photoeditorsdk react react-dom styled-components
 or
-npm i -D vue-pesdk photoeditorsdk react react-dom
+npm i -D vue-pesdk photoeditorsdk react react-dom styled-components
 ```
 
-`photoeditorsdk`, `react` and `react-dom` are peerDependencies and are needed to render the PhotoEditorSDK UI.
-In addition you need the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin) assets. You can either get them [here](https://github.com/imgly/pesdk-html5-build/tree/master/assets) or copy it from your `node_modules` into your public asset folder. And set the `assetPath` prop to this folder.
+`react`, `react-dom` and `styled-components` are peerDependencies and are needed to render the PhotoEditorSDK UI.
+In addition you need the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin) assets. You can either get them [here](https://github.com/imgly/pesdk-html5-build/tree/master/assets) or copy it from your `node_modules` into your public asset folder. And set the `assetBaseUrl` prop to this folder.
 
 ```bash
 cp -r node_modules/photoeditorsdk/assets/ ~/projects/your-project/public/assets
@@ -43,9 +43,6 @@ Import the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projec
 </template>
 
 <script>
-  import 'photoeditorsdk/css/PhotoEditorSDK.UI.DesktopUI.min.css';
-  import 'photoeditorsdk/css/PhotoEditorSDK.UI.ReactUI.min.css';
-
   import PhotoEditor from 'vue-pesdk';
 
   export default {
@@ -72,7 +69,7 @@ Because of that you have only 3 important and required props, `license`, `imageP
 
 However, you have to either download or copy the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin) assets to your public asset folder. You can either get them [here](https://github.com/imgly/pesdk-html5-build/tree/master/assets) or copy them from your `node_modules`.
 
-If you need more configuration possibilities, you can pass all the mentioned [options](https://docs.photoeditorsdk.com/guides/html5/v4/introduction/configuration) to the `editorOptions` or `options` prop.
+If you need more configuration possibilities, you can pass all the mentioned [options](https://docs.photoeditorsdk.com/guides/html5/v4/introduction/configuration) to the `options` prop.
 
 Furthermore, the editor instance is saved as a Vue Instance Property so you can access the editor instance inside your parent component with `this.$pesdk` after the editor is mounted.
 

@@ -1,7 +1,9 @@
 {
-  "name": "pesdk-wrapper-vuejs",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue-pesdk",
+  "version": "5.0.0-rc-3",
+  "description": "PhotoEditorSDK wrapper for Vue.js",
+  "author": "Team PhotoEditorSDK <contact@photoeditorsdk.com>",
+  "private": false,
   "scripts": {
     "dev": "vue-cli-service serve",
     "unit": "vue-cli-service test:unit",
