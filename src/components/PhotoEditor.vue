@@ -39,8 +39,7 @@ export default {
     },
     assetPath: {
       type: String,
-      default: 'assets',
-      required: true
+      default: 'assets'
     },
     options: {
       type: Object
@@ -58,15 +57,13 @@ export default {
   created() {
     this.image = new Image();
     if (this.imagePath) {
+      this.image.onload = this.renderUi.bind(this);
       this.image.src = this.imagePath;
     }
   },
-  mounted() {
-    this.renderUi();
-  },
   methods: {
-    renderUi() {
-      this.editor = new PhotoEditorSDKUI({
+    async renderUi() {
+      this.editor = await new PhotoEditorSDKUI.init({
         ...this.options,
         image: this.image,
         layout: this.layout,
