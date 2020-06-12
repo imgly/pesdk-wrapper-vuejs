@@ -69,9 +69,7 @@ export default {
         layout: this.layout,
         theme: this.theme,
         container: this.$refs.container,
-        engine: {
-          license: this.license
-        },
+        license: this.license,
         assetBaseUrl: this.assetPath
       });
       /**
