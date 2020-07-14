@@ -6,7 +6,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Vue from 'vue';
-import { PhotoEditorSDKUI } from 'photoeditorsdk';
+import { PhotoEditorSDKUI, UIEvent } from 'photoeditorsdk';
 
 window.React = window.React || React;
 window.ReactDom = window.ReactDom || ReactDom;
@@ -69,9 +69,7 @@ export default {
         layout: this.layout,
         theme: this.theme,
         container: this.$refs.container,
-        engine: {
-          license: this.license
-        },
+        license: this.license,
         assetBaseUrl: this.assetPath
       });
       /**
@@ -80,6 +78,12 @@ export default {
        * `this.$pesdk` and listen on events.
        */
       Vue.prototype.$pesdk = this.editor;
+
+      this.$pesdk.on(UIEvent.EXPORT, result => {
+        // eslint-disable-next-line
+        console.log(result);
+      });
+      this.$pesdk.on(UIEvent.EDITOR_READY, () => {});
     }
   }
 };
