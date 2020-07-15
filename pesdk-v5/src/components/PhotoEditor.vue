@@ -53,11 +53,12 @@ export default {
   watch: {
     layout() {
       this.initEditor();
-      // @ts-ignore Make the value global for the Cypress E2E test
-      window.initEditor = this.initEditor.bind(this);
     }
   },
   created() {
+    // @ts-ignore Make the value global for the Cypress E2E test
+    window.initEditor = this.initEditor.bind(this);
+
     this.image = new Image();
     if (this.imagePath) {
       this.image.onload = () => this.initEditor();
