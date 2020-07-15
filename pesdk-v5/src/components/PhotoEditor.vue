@@ -6,7 +6,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Vue from 'vue';
-import { PhotoEditorSDKUI, UIEvent } from 'photoeditorsdk';
+import { deepmergeAll, PhotoEditorSDKUI, UIEvent } from 'photoeditorsdk';
 
 window.React = window.React || React;
 window.ReactDom = window.ReactDom || ReactDom;
@@ -42,7 +42,8 @@ export default {
       default: 'assets'
     },
     options: {
-      type: Object
+      type: Object,
+      default: () => ({})
     }
   },
   data: () => ({
@@ -51,27 +52,41 @@ export default {
   }),
   watch: {
     layout() {
-      this.renderUi();
+      this.initEditor();
+      // @ts-ignore Make the value global for the Cypress E2E test
+      window.initEditor = this.initEditor.bind(this);
     }
   },
   created() {
     this.image = new Image();
     if (this.imagePath) {
-      this.image.onload = this.renderUi.bind(this);
+      this.image.onload = () => this.initEditor();
       this.image.src = this.imagePath;
     }
   },
   methods: {
-    async renderUi() {
-      this.editor = await new PhotoEditorSDKUI.init({
-        ...this.options,
-        image: this.image,
-        layout: this.layout,
-        theme: this.theme,
-        container: this.$refs.container,
-        license: this.license,
-        assetBaseUrl: this.assetPath
-      });
+    async initEditor(config = {}) {
+      if (this.editor) {
+        this.editor.dipose();
+      }
+      const editor = await new PhotoEditorSDKUI.init(
+        deepmergeAll([
+          this.options,
+          {
+            image: this.image,
+            layout: this.layout,
+            theme: this.theme,
+            container: this.$refs.container,
+            license: this.license,
+            assetBaseUrl: this.assetPath
+          },
+          config
+        ])
+      );
+      this.editor = editor;
+      // Make the value global for the Cypress E2E test
+      window.editor = editor;
+
       /**
        * Save the editor instance as a vue instance property
        * so you are able to access it from anywhere with
