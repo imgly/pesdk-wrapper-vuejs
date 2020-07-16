@@ -56,8 +56,8 @@ export default {
     }
   },
   created() {
-    // @ts-ignore Make the value global for the Cypress E2E test
-    window.initEditor = this.initEditor.bind(this);
+    // Make the value global for the Cypress E2E test
+    window.initPesdk = this.initEditor.bind(this);
 
     this.image = new Image();
     if (this.imagePath) {
@@ -86,7 +86,7 @@ export default {
       );
       this.editor = editor;
       // Make the value global for the Cypress E2E test
-      window.editor = editor;
+      window.pesdkEditor = editor;
 
       /**
        * Save the editor instance as a vue instance property
