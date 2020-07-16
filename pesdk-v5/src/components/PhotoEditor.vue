@@ -68,7 +68,7 @@ export default {
   methods: {
     async initEditor(config = {}) {
       if (this.editor) {
-        this.editor.dipose();
+        this.editor.dispose();
       }
       this.editor = await new PhotoEditorSDKUI.init(
         deepmergeAll([
