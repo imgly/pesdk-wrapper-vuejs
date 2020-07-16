@@ -31,3 +31,7 @@ Please see [CONTRIBUTORS](CONTRIBUTORS.md) for licensing details.
 ## 💬 Support or Contact
 
 For support requests, please use our [Support Desk](https://support.photoeditorsdk.com).
+
+## 🖼️ Photo credits
+
+Hot Air Balloon photo (example.jpg) by [ellehem on Unsplash](https://unsplash.com/photos/M0HwJ4j58-w). [License](https://unsplash.com/license).
