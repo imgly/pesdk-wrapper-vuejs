@@ -70,7 +70,7 @@ export default {
       if (this.editor) {
         this.editor.dispose();
       }
-      this.editor = await new PhotoEditorSDKUI.init(
+      const editor = await new PhotoEditorSDKUI.init(
         deepmergeAll([
           this.options,
           {
@@ -84,6 +84,9 @@ export default {
           config
         ])
       );
+      this.editor = editor;
+      // Make the value global for the Cypress E2E test
+      window.editor = editor;
 
       /**
        * Save the editor instance as a vue instance property
