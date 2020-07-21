@@ -56,14 +56,15 @@ export default {
     }
   },
   created() {
-    // Make the value global for the Cypress E2E test
-    window.initPesdk = this.initEditor.bind(this);
-
     this.image = new Image();
     if (this.imagePath) {
       this.image.onload = () => this.initEditor();
       this.image.src = this.imagePath;
     }
+
+    // Make the value global for the Cypress end-to-end (E2E) test.
+    // This is not necessary for the PhotoEditorSDK to work and can be removed safely.
+    window.initPesdk = this.initEditor.bind(this);
   },
   methods: {
     async initEditor(config = {}) {
@@ -85,8 +86,6 @@ export default {
         ])
       );
       this.editor = editor;
-      // Make the value global for the Cypress E2E test
-      window.pesdkEditor = editor;
 
       /**
        * Save the editor instance as a vue instance property
@@ -100,6 +99,10 @@ export default {
         console.log(result);
       });
       this.$pesdk.on(UIEvent.EDITOR_READY, () => {});
+
+      // Make the value global for the Cypress end-to-end (E2E) test.
+      // This is not necessary for the PhotoEditorSDK to work and can be removed safely.
+      window.pesdkEditor = editor;
     }
   }
 };
