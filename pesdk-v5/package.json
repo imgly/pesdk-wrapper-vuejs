@@ -6,6 +6,7 @@
   "private": false,
   "scripts": {
     "dev": "vue-cli-service serve",
+    "start": "npm run dev",
     "unit": "vue-cli-service test:unit",
     "e2e": "vue-cli-service test:e2e",
     "test": "npm run e2e & npm run unit",
