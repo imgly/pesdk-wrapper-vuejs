@@ -1,0 +1,52 @@
+{
+  "name": "vue-pesdk",
+  "version": "5.6.1",
+  "description": "PhotoEditorSDK wrapper for Vue.js",
+  "author": "Team PhotoEditorSDK <contact@photoeditorsdk.com>",
+  "private": false,
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "start": "npm run dev",
+    "unit": "vue-cli-service test:unit",
+    "e2e": "vue-cli-service test:e2e",
+    "test": "npm run e2e & npm run unit",
+    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config rollup.config.js --format umd --file dist/vue-pesdk.umd.js",
+    "build:es": "rollup --config rollup.config.js --format es --file dist/vue-pesdk.esm.js",
+    "build:unpkg": "rollup --config rollup.config.js --format iife --file dist/vue-pesdk.min.js"
+  },
+  "dependencies": {
+    "core-js": "^3.4.4",
+    "photoeditorsdk": "^5",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "styled-components": "^4.4.1",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@vue/cli-plugin-babel": "^4.1.0",
+    "@vue/cli-plugin-e2e-nightwatch": "^4.1.0",
+    "@vue/cli-plugin-eslint": "^4.1.0",
+    "@vue/cli-plugin-unit-jest": "^4.1.0",
+    "@vue/cli-service": "^4.2.3",
+    "@vue/eslint-config-prettier": "^5.0.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-eslint": "^10.0.3",
+    "chromedriver": "79",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-vue": "^5.0.0",
+    "geckodriver": "^1.19.1",
+    "prettier": "^1.19.1",
+    "rollup": "^1.31.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-vue": "^5.1.6",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
