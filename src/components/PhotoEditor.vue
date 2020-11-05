@@ -71,7 +71,7 @@ export default {
       if (this.editor) {
         this.editor.dispose();
       }
-      const editor = await new PhotoEditorSDKUI.init(
+      const editor = await PhotoEditorSDKUI.init(
         deepmergeAll([
           this.options,
           {
