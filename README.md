@@ -8,9 +8,9 @@
 
 ## 🏷 Note
 
-[PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin)
-is a product of img.ly GmbH. In order to use [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin) inside one of your products, you will need a valid
-[a license](https://www.photoeditorsdk.com/pricing#contact/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin).
+[PhotoEditor SDK](https://img.ly/photo-sdkutm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin)
+is a product of img.ly GmbH. In order to use [PhotoEditor SDK](https://img.ly/photo-sdk?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin) inside one of your products, you will need a valid
+[a license](https://img.ly/pricing?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin).
 
 ## 🔧 Installation
 
@@ -21,17 +21,17 @@ npm i -D vue-pesdk photoeditorsdk react react-dom styled-components
 ```
 
 `react`, `react-dom` and `styled-components` are peerDependencies and are needed to render the PhotoEditorSDK UI.
-In addition you need the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin) assets. You can either get them [here](https://github.com/imgly/pesdk-html5-build/tree/master/assets) or copy it from your `node_modules` into your public asset folder. And set the `assetBaseUrl` prop to this folder.
+In addition you need the [PhotoEditor SDK](https://img.ly/photo-sdk?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin) assets. You can either get them [here](https://github.com/imgly/pesdk-html5-build/tree/master/assets) or copy it from your `node_modules` into your public asset folder. And set the `assetBaseUrl` prop to this folder.
 
 ```bash
 cp -r node_modules/photoeditorsdk/assets/ ~/projects/your-project/public/assets
 ```
 
-If needed, take a look at the [official documentation](https://docs.photoeditorsdk.com) for further information.
+If needed, take a look at the [official documentation](https://img.ly/docs/pesdk) for further information.
 
 ## 👈 Usage
 
-Import the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin) css styles and the vue-sdk component.
+Import the [PhotoEditor SDK](https://img.ly/photo-sdk?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin) css styles and the vue-sdk component.
 
 ```html
 <template>
@@ -57,19 +57,19 @@ Import the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projec
 | --------- | ---------- | ------ | -------- | ------------------------------------------------------------------------------------------------ |
 | layout    | 'advanced' | String | no       | Select if you want to use the Advanced or Basic UI. Supported values are `advanced` and `basic`. |
 | theme     | 'dark'     | String | no       | Select if you want to use the Dark or Light Theme. Supported values are `dark` and `light`.      |
-| license   | ''         | String | **yes**  | Your PhotoEditorSDK license. [Get it here](https://www.photoeditorsdk.com)                       |
+| license   | ''         | String | **yes**  | Your PhotoEditorSDK license. [Get it here](https://img.ly/photo-sdk)                       |
 | imagePath | ''         | String | **yes**  | Path to the image that will be rendered initially                                                |
 | assetPath | 'assets'         | String | **yes**  | Path to your assets. Where the PhotoEditorSDK assets are stored                                  |
 | options   |            | Object | no       |                                                                                                  |
 
 ## 🛫 Getting Started
 
-The idea behind this wrapper is to simplify the usage of the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin) inside Vue. We try to minimize the configuration and maximize the possibilities.
+The idea behind this wrapper is to simplify the usage of the [PhotoEditor SDK](https://img.ly/photo-sdk?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin) inside Vue. We try to minimize the configuration and maximize the possibilities.
 Because of that you have only 3 important and required props, `license`, `imagePath` and `assetPath` to get the editor running.
 
-However, you have to either download or copy the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin) assets to your public asset folder. You can either get them [here](https://github.com/imgly/pesdk-html5-build/tree/master/assets) or copy them from your `node_modules`.
+However, you have to either download or copy the [PhotoEditor SDK](https://img.ly/photo-sdk?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=VueJs-Plugin) assets to your public asset folder. You can either get them [here](https://github.com/imgly/pesdk-html5-build/tree/master/assets) or copy them from your `node_modules`.
 
-If you need more configuration possibilities, you can pass all the mentioned [options](https://docs.photoeditorsdk.com/guides/html5/v4/introduction/configuration) to the `options` prop.
+If you need more configuration possibilities, you can pass all the mentioned [options](https://img.ly/docs/pesdk/web/v4/introduction/configuration/) to the `options` prop.
 
 Furthermore, the editor instance is saved as a Vue Instance Property so you can access the editor instance inside your parent component with `this.$pesdk` after the editor is mounted.
 
@@ -98,7 +98,7 @@ Furthermore, the editor instance is saved as a Vue Instance Property so you can 
 
 ### Listen to Events
 
-You can listen to various events in the [PhotoEditorSdk](https://docs.photoeditorsdk.com/guides/html5/v4/concepts/events)
+You can listen to various events in the [PhotoEditorSdk](https://img.ly/docs/pesdk/web/v4/concepts/events/)
 You can simply attach an `.on()` event to the editor instance.
 
 ```html
@@ -128,7 +128,7 @@ You can simply attach an `.on()` event to the editor instance.
 
 ### Specifying which focus modes are available
 
-Like mentioned earlier you can pass in all configuration options like [here](https://docs.photoeditorsdk.com/guides/html5/v4/features/focus).
+Like mentioned earlier you can pass in all configuration options like [here](https://img.ly/docs/pesdk/web/v4/features/focus/).
 
 ```html
 <template>
@@ -197,4 +197,4 @@ Please see [CONTRIBUTORS](CONTRIBUTORS.md) for licensing details.
 
 ## 💬 Support or Contact
 
-For support requests, please use our [Support Desk](https://support.photoeditorsdk.com).
+For support requests, please use our [Support Desk](https://support.img.ly).
