@@ -2,6 +2,8 @@
   <img width="484" heigth="169" src="/logo.png" alt="vue-pesdk">
 </div>
 
+**You can find our latest examples at https://github.com/imgly/pesdk-web-examples.**
+
 # vue-pesdk
 
 > PhotoEditor SDK Vue.js wrapper
